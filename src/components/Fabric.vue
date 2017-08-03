@@ -78,7 +78,14 @@
             }
           }
 
-          var objectGroup = new fabric.Group(group, {left: 20})
+          let groupConfig = {
+            left: 20,
+            hasControls: true,
+            hasRotatingPoint: true,
+            transparentCorners: false,
+            rotatingPointOffset: 50
+          }
+          var objectGroup = new fabric.Group(group, groupConfig)
           canvas.add(objectGroup)
         }
       }
@@ -86,11 +93,28 @@
   }
 
   function renderRect (pLeft, pTop) {
-    return new fabric.Rect({ width: 20, height: 20, fill: 'white', stroke: 'black', strokeWidth: 2, left: pLeft, top: pTop })
+    let rectConfig = {
+      width: 20,
+      height: 20,
+      fill: 'white',
+      stroke: 'black',
+      strokeWidth: 2,
+      left: pLeft,
+      top: pTop
+    }
+    return new fabric.Rect(rectConfig)
   }
 
   function renderText (pText, pLeft, pTop) {
-    return new fabric.Text(getLetter(pText), { fontSize: 14, width: 20, height: 20, left: pLeft + 5, top: pTop + 2 })
+    let textConfig = {
+      textAlign: 'center',
+      fontSize: 14,
+      width: 20,
+      height: 20,
+      left: pLeft + 5,
+      top: pTop + 2
+    }
+    return new fabric.Text(getLetter(pText), textConfig)
   }
 
   function getLetter (pNumber) {
