@@ -56,7 +56,7 @@
       </v-btn>
     </v-toolbar>
     <main>
-      <v-container fluid>
+      <!-- <v-container fluid>
         <v-slide-y-transition mode="out-in">
           <v-layout column align-center>
             <img src="/static/v.png" alt="Vuetify.js" class="mb-5">
@@ -70,7 +70,10 @@
             </blockquote>
           </v-layout>
         </v-slide-y-transition>
-      </v-container>
+      </v-container> -->
+
+      <router-view></router-view>
+      
     </main>
     <v-navigation-drawer
       temporary
